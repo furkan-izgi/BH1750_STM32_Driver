@@ -2,6 +2,8 @@
 
 This project provides a lightweight STM32 HAL-based driver for the BH1750 digital light intensity sensor. It allows you to easily configure measurement modes, adjust sensitivity, and read lux values via the I2C interface.
 
+> NOTE: This has not been tested with any simulation or on a real circuit :/
+
 ## 📦 File Structure
 
 | File        | Description                                           |
