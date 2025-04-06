@@ -9,7 +9,7 @@ HAL_StatusTypeDef BH1750_Init(bh1750_t *bh1750, I2C_HandleTypeDef *hi2c){
 	bh1750->data[1] = 0;
 
 	/* Set Measurement Time to Default Value */
-	status = BH1750_Change_Measurement_Time(bh1750, 69);
+	status = BH1750_Change_Measurement_Time(bh1750, BH1750_DEFAULT_SENSITIVITY);
 	if(status != HAL_OK) {
 		return status;
 	}
@@ -85,7 +85,7 @@ HAL_StatusTypeDef BH1750_Change_Measurement_Time(bh1750_t *bh1750, float sensiti
 		return HAL_ERROR;
 	}
 
-	uint8_t new_sens = BH1750_DEFAULT_SENSITIVITY * sensitivity;
+	uint8_t new_sens = sensitivity;
 
 	uint8_t sens_bits[2] = {BH1750_MT_REG_HIGH_BYTE, BH1750_MT_REG_LOW_BYTE};
 
