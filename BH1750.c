@@ -35,13 +35,13 @@ HAL_StatusTypeDef BH1750_Init(bh1750_t *bh1750, I2C_HandleTypeDef *hi2c){
 	return status;
 }
 
-static HAL_StatusTypeDef writeReg(bh1750_t *bh1750, uint8_t regAddr) {
+HAL_StatusTypeDef writeReg(bh1750_t *bh1750, uint8_t regAddr) {
 	HAL_StatusTypeDef status;
 	status = HAL_I2C_Master_Transmit(bh1750->hi2c, BH1750_WRITE_MODE, &regAddr, 1, BH1750_TIMEOUT);
 	return status;
 }
 
-static HAL_StatusTypeDef writeRegs(bh1750_t *bh1750, uint8_t *regAddr, uint8_t size) {
+HAL_StatusTypeDef writeRegs(bh1750_t *bh1750, uint8_t *regAddr, uint8_t size) {
 	HAL_StatusTypeDef status;
 	status = HAL_I2C_Master_Transmit(bh1750->hi2c, BH1750_WRITE_MODE, regAddr, size, BH1750_TIMEOUT);
 	return status;
