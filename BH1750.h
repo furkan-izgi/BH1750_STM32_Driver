@@ -75,8 +75,8 @@ typedef struct {
 
 HAL_StatusTypeDef BH1750_Init(bh1750_t *bh1750, I2C_HandleTypeDef *hi2c);
 
-static HAL_StatusTypeDef writeReg(bh1750_t *bh1750, uint8_t regAddr);
-static HAL_StatusTypeDef writeRegs(bh1750_t *bh1750, uint8_t *regAddr, uint8_t size);
+HAL_StatusTypeDef writeReg(bh1750_t *bh1750, uint8_t regAddr);
+HAL_StatusTypeDef writeRegs(bh1750_t *bh1750, uint8_t *regAddr, uint8_t size);
 HAL_StatusTypeDef readReg(bh1750_t *bh1750, uint8_t regAddr);
 
 HAL_StatusTypeDef BH1750_Change_Mode(bh1750_t *bh1750);
