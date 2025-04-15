@@ -18,20 +18,6 @@ This project provides a lightweight STM32 HAL-based driver for the BH1750 digita
 - I2C lines (SCL, SDA)
 - Pull-up resistors (typically 4.7kΩ)
 
-## 🛠️ Main Functions
-
-`HAL_StatusTypeDef BH1750_Init(bh1750_t *bh1750, I2C_HandleTypeDef *hi2c);`
-- Initializes the sensor, sets default mode and measurement time, powers on, and resets registers.
-
-`void BH1750_Get_Measurement(bh1750_t *bh1750);`
-- Reads the light data and stores the result in bh1750->lumen as a float value (lux).
-
-`HAL_StatusTypeDef BH1750_Change_Mode(bh1750_t *bh1750);`
-- Changes the measurement mode (continuous/one-time, high/low resolution). Uses the mode field inside the struct.
-
-`HAL_StatusTypeDef BH1750_Change_Measurement_Time(bh1750_t *bh1750, float sensitivity);`
-- Adjusts the measurement sensitivity. Valid range: 31 - 254. See datasheet page 11.
-
 ## 🔢 Available Measurement Modes
 
 | Definition                   | Description                          |
